@@ -14,6 +14,10 @@ fun main() {
  println(json)
 
  val gson = Gson()
- val meuJogo = gson.fromJson(json, infoJogo::class.java) //Desserialização
+ val meuInfoJogo = gson.fromJson(json, infoJogo::class.java) //Desserialização
+
+
+ val meuJogo = Jogo(meuInfoJogo.info.title,
+  meuInfoJogo.info.thumb)
  println(meuJogo)
 }
